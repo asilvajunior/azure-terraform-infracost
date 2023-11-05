@@ -1,10 +1,10 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "rg-ccd-terraform-infracost"
-    storage_account_name = "ccdterraformstate"
-    container_name       = "terraform"
-    key                  = "cicd.tfstate"
-    access_key           = "xvNaJdX+UtOe+JluzJU9dAGCXNR9ps+sdJy8CCOpCv9AHCSWQ9nkbMNd7lqEhOTXXSwx7KT3ekES+AStwIf8Wg=="
+    resource_group_name  = "rg-name"
+    storage_account_name = "storage-name"
+    container_name       = "container-name"
+    key                  = "terraform.tfstate"
+    access_key           = "storage-key"
   }
 
   required_providers {
