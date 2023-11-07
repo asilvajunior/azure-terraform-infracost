@@ -41,6 +41,10 @@ Take advantage of the **Infracost** integration to make informed decisions about
 
 If you have any questions or need additional help, please don't hesitate to contact me.
 
+<p align='center'>
+  Do you like my open source projects? <a href='https://stars.github.com/nominate/'>Nominate me to Github Stars ⭐</a>
+</p>
+
 ## :memo: License
 
 This project is under [MIT License](./LICENSE).
