@@ -75,7 +75,7 @@ jobs:
 
       # Chamar a action do infracost passando a nossa secret
       - name: Setup Infracost
-        uses: infracost/actions/setup@v1
+        uses: infracost/actions/setup@v3
         with:
           api-key: ${{ secrets.INFRACOST_API_KEY }}
 
@@ -83,8 +83,10 @@ jobs:
       - name: Generate Infracost JSON
         run: infracost breakdown --path plan.json --format json --out-file /tmp/infracost.json
 
-      - name: Infracost Actions
-        uses: infracost/actions/comment@v1
-        with:
-          path: /tmp/infracost.json
-          behavior: update
+      - name: Post Infracost comment
+        run: |
+          infracost comment github --path=/tmp/infracost.json \
+                                   --repo=$GITHUB_REPOSITORY \
+                                   --github-token=${{ secrets.GITHUB_TOKEN }} \
+                                   --pull-request=${{ github.event.pull_request.number }} \
+                                   --behavior=update
